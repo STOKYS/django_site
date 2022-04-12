@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if flights %}
+        {% for flight in flights %}
+            <p>{{flight}}</p>
+        {% endfor %}
+    {% else %}
+        <p>{{context}}</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="detail_container">
+            <div class="detail_box">
+                <h1>{{ person_get }}</h1>
+                <hr>
+                <table>
+                    <tr>
+                        {% for value in person_filter.values.first %}
+                            <th>{{value}}</th>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        {% for value in person_filter.values_list.first %}
+                            <td>{{value}}</td>
+                        {% endfor %}
+                    </tr>
+                </table>
+
+            </div>
+    </div>
+{% endblock %}

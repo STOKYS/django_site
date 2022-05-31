@@ -34,11 +34,15 @@ class Staff(models.Model):
         return f'{self.flight} / {self.person} [{self.role}]'
 
 
+class Gender(models.TextChoices):
+    MALE = "Male",
+    FEMALE = "Female"
+
+
 class Person(models.Model):
     name = models.CharField(max_length=60)
     surname = models.CharField(max_length=60)
-    # gender = models.models
-    # I'm not sure how to do ENUM yet
+    gender = models.CharField(max_length=6, choices=Gender.choices, default=Gender.MALE)
     date_of_birth = models.DateField()
     postcode = models.CharField(max_length=45)
     street_name = models.CharField(max_length=45)

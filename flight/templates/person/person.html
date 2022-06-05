@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ person }}</h1>
+    <table class="list_table">
+        <tr>
+            <th>Date of birth</th>
+            <th>Gender</th>
+            <th>Address</th>
+        </tr>
+        <tr>
+            <td>{{ person.date_of_birth }}</td>
+            <td>{{ person.gender }}</td>
+            <td>{{ person.city }} {{ person.postcode }}, {{ person.street_name }} {{ person.house_number }}</td>
+        </tr>
+    </table>
+    <h2>Flights he's on</h2>
+    {% if staffs %}
+        <h3>As a staff member:</h3>
+        {% for staff in staffs %}
+            <a href="/flight/{{ staff.flight.id }}">
+                <span class="box-click">
+                    {{ staff }}
+                </span>
+            </a>
+        {% endfor %}
+    {% endif %}
+    {% if passengers %}
+        <h3>As a passenger:</h3>
+        {% for passenger in passengers %}
+            <a href="/flight/{{ passenger.flight.id }}">
+                <span class="box-click">
+                    {{ passenger }}
+                </span>
+            </a>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

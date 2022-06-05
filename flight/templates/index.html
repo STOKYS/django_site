@@ -2,29 +2,11 @@
 
 {% block content %}
     <div class="container">
-        {% if flights %}
-            <div class="box">
-            <h1>Flights</h1>
-            {% for flight in flights %}
-                <a href="flight/{{ flight.id }}">
-                    <span class="box-click" data-type="flight" data-id={{flight.id}}>
-                        {{flight}}
-                    </span>
-                </a>
-            {% endfor %}
-            </div>
-        {% endif %}
-        {% if persons %}
-            <div class="box">
-            <h1>People</h1>
-            {% for person in persons %}
-                <a href="person/{{person.id}}">
-                    <span class="box-click" data-type="person" data-id={{person.id}}>
-                        {{person}}
-                    </span>
-                </a>
-            {% endfor %}
-            </div>
-        {% endif %}
+    <h1>Welcome to the bestest flight database that you've ever seen</h1>
+        <a href="">
+            <span>
+                Purchase ticket
+            </span>
+        </a>
     </div>
 {% endblock %}

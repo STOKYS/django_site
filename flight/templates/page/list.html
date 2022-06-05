@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="list_content">
+        <div class="list_box">
+            <h1>Upcoming flights</h1>
+            <table class="list_table">
+                <tr>
+                    <th>Flight</th>
+                    <th>Date</th>
+                </tr>
+                {% for flight in flights %}
+                    <tr>
+                        <td>
+                            <a href="/flight/{{ flight.id }}">
+                                <span class="box-click" data-type="flight" data-id={{flight.id}}>
+                                    {{flight}}
+                                </span>
+                            </a>
+                        </td>
+                        <td>
+                            {{flight.date}}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="list_box">
+            <h1>Flights today</h1>
+            <table>
+            </table>
+        </div>
+        <div class="list_box">
+            <h1>Past flights</h1>
+            <table>
+            </table>
+        </div>
+    </div>
+{% endblock %}

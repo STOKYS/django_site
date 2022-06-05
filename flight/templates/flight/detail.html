@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{#    {{ flight_filter }}#}
+{#    {{ flight_get }}#}
+    <div class="detail_flight">
+        <h1>{{ flight_get }}</h1>
+    </div>
+    <table class="list_table">
+        <tr>
+            <th>Start</th>
+            <th>Destination</th>
+            <th>Terminal</th>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>{{ flight_get.start }}</td>
+            <td>{{ flight_get.destination }}</td>
+            <td>{{ flight_get.terminal }}</td>
+            <td>{{ flight_get.date }}</td>
+            <td>${{ flight_get.price }}</td>
+        </tr>
+    </table>
+    <div class="detail_people">
+        <div class="detail_people_single">
+            <h2>Staff</h2>
+            {% for staff in flight_staff %}
+                <a href="/person/{{ staff.person.id }}">
+                    <span class="box-click">
+                        {{ staff.person }} [{{ staff.role }}]
+                    </span>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="detail_people_single">
+            <h2>Passengers</h2>
+            {% for passenger in flight_passenger %}
+               <a href="/person/{{ passenger.person.id }}">
+                    <span class="box-click">
+                        {{ passenger.person }} [{{ passenger.seat }}]
+                    </span>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

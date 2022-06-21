@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: white;
+    background-color: rgb(20,20,30);
     margin: 0;
     padding: 0;
 }
@@ -33,7 +33,7 @@ header{
 
     /*height: 60px;*/
     /*border-bottom: 1px solid black;*/
-    background-color: rgb(220,220,220);
+    background-color: rgb(22,22,22);
 }
 
 .header_button-group{
@@ -46,14 +46,25 @@ header{
     width: 100%;
     height: 60px;
     text-align: center;
-    background-color: rgb(200,200,200);
-    /*border: 1px solid rgb(20,20,20);*/
+    background-color: rgb(20,20,20);
+    border-bottom: 2px solid rgb(50,50,50);
+    margin-top: 10px;
+    font-weight: 700;
+    transition: background-color 500ms;
+}
+
+.header_button:hover{
+    background-color: rgb(25,25,25);
+
 }
 
 .header_button>*{
     display: inline-block;
     height: 100%;
     width: 100%;
+    text-transform: uppercase;
+    color: rgb(220,220,220);
+    text-decoration: none;
 }
 
 footer{
@@ -65,11 +76,12 @@ footer{
 }
 
 .container{
-    padding: 10px;
     margin-left: 20%;
-    margin-top: 5%;
+    padding: 5% 10px 10px;
     width: 60%;
-    /*background-color: rgb(240,240,240);*/
+    height: calc(90%);
+    color: rgb(150,150,150);
+    /*background-color: rgb(10,10,20);*/
     /*display: grid;*/
     /*grid-template-columns: repeat(2, 1fr);*/
     /*grid-template-rows: repeat(2, 1fr);*/
@@ -80,12 +92,15 @@ footer{
 .index_container>h1{
     font-size: 50px;
     text-align: center;
+    color: rgb(180,180,180);
+    font-weight: 300;
 }
 
 .index_container>h2{
     font-size: 30px;
     text-align: center;
-    color: rgb(40,40,40);
+    color: rgb(100,100,100);
+    font-weight: 500;
 }
 
 .box{
@@ -103,30 +118,27 @@ footer{
     font-size: 14px;
     display: block;
     border-radius: 10px;
-    border: 1px solid rgb(200, 200, 200);
+    border: 1px solid rgb(30, 30, 30);
     /*width: calc(100% - 40px);*/
     height: 50px;
-    background-color: rgb(240,240,240);
+    background-color: rgb(20,20,20);
     box-shadow: 3px 3px 14px 10px rgba(0,0,0,0.03);
     padding: 10px;
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.2s;
     line-height: 50px;
-    color: black;
+    color: rgb(220,220,220);
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.box-click>*{
+    text-decoration: none;
 }
 
 .box-click:hover{
-    background-color: rgb(230,230,230);
-}
-
-.box-click > p{
-    margin: 0;
-    height: 50px;
-    line-height: 50px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    font-weight: 300;
+    background-color: rgb(30,30,30);
 }
 
 .detail_container{
@@ -172,8 +184,7 @@ footer{
 
 .list_table{
     width: 100%;
-    /*width: 80%;*/
-    /*margin-left: 10%;*/
+    color: rgb(200,200,200);
 }
 
 .list_table>*{
